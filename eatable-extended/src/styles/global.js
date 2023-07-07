@@ -82,8 +82,7 @@ export const reset = css`
 `;
 
 export const global = css`
-  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@400;500;600&display=swap");
-
+  @import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&display=swap");
   body {
     font-family: ${fonts.primary};
     color: ${colors.gray[900]};
