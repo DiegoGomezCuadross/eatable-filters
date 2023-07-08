@@ -1,6 +1,6 @@
 
-import { tokenKey } from "../../config";
-import apiFetch from "../api-fetch";
+import { tokenKey } from "../config";
+import apiFetch from "./api-fetch";
 
 export async function login(credentials = {
     "email": "testino@mail.com",
@@ -17,4 +17,15 @@ export async function login(credentials = {
         console.log(user);
 
         return user;
+}
+
+
+export async function logout(){
+
+    const data = await apiFetch("/logout",{method: "DELETE"});
+    sessionStorage.removeItem(tokenKey)
+
+    console.log(data);
+
+    return data;
 }
