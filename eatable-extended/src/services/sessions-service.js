@@ -13,6 +13,8 @@ export async function login(
 
   sessionStorage.setItem(tokenKey, token);
 
+  console.log(user);
+
   return user;
 }
 

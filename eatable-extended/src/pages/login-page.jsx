@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
-import { useState } from "react";
+// import { useState } from "react";
 import { colors } from "../styles/colors";
-import { typography } from "../styles/typography";
+// import { typography } from "../styles/typography";
 import EatableLogo from "../images/logo.png";
 import TypeNav from "../components/type-nav";
 import Input from "../components/input";
@@ -59,8 +59,8 @@ function LoginForm() {
   const { login } = useAuth();
 
   //   const [formData, setFormData] = useState({
-  //     email: "crhis@mail.com",
-  //     password: "123123",
+  //     email: "testino@mail.com",
+  //     password: "letmein",
   //   });
 
   //   const { email, password } = formData;
@@ -73,6 +73,7 @@ function LoginForm() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    console.log(event);
     login();
     // toast.success("Successfully loged in!")
   }
@@ -88,7 +89,7 @@ function LoginForm() {
         </div>
       </Header>
 
-      <Form onsubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <InputWrapper>
           <Input
             id="email"

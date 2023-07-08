@@ -3,13 +3,13 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { createUser, getUser, updateUser } from "../services/users-service";
 import * as session from "../services/sessions-service";
 import { tokenKey } from "../config";
-import LoadingImage from "../images/cover.png";
+// import LoadingImage from "../images/cover.png";
 
 const AuthContext = createContext();
 
 function AuthProvider(props) {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
   function login(credentials) {
     session.login(credentials).then(setUser).catch(console.log);
@@ -41,7 +41,10 @@ function AuthProvider(props) {
 
   useEffect(() => {
     getUser()
-      .then((user) => setUser(user))
+      .then((user) => {
+        console.log(user);
+        setUser(user);
+      })
       .catch((error) => console.log(error));
   }, []);
 
