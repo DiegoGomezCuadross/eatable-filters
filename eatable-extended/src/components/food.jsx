@@ -1,16 +1,57 @@
 import styled from "@emotion/styled";
-
-const Container = styled.div`
+import foodImage from "../images/food.svg";
+const ContainerCard = styled.div`
   width: 156px;
   height: 250px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  background: #fff;
+  box-shadow: 0px 30px 60px 0px rgba(100, 57, 57, 0.1);
 `;
-const ContainerImage = styled.div``;
+const ContainerText = styled.div`
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 0 13px 0 13px;
+`;
+
+const ContainerTitle = styled.div`
+description (FoodCard)
+display: flex;
+width: 130px;
+flex-direction: column;
+justify-content: center;
+color: var(--black, #333);
+text-align: center;
+font-size: 22px;
+font-weight: 600;
+`;
+const ContainerPrice = styled.div`
+  color: var(--orange, #fa4a0c);
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+`;
+
+const Image = styled.img`
+  width: 130px;
+  height: 130px;
+  flex-shrink: 0;
+  margin: 0 13px 13px;
+  border-radius: 130px;
+  background: url(../images/food-2.png), lightgray 50% / cover no-repeat;
+`;
 function Food() {
   return (
-    <Container>
-      <h1>Hola</h1>
-    </Container>
+    <ContainerCard>
+      <Image src={foodImage} alt="Food image" />
+      <ContainerText>
+        <ContainerTitle>Veggie tomato mix</ContainerTitle>
+        <ContainerPrice>$15.45</ContainerPrice>
+      </ContainerText>
+    </ContainerCard>
   );
 }
-
 export default Food;
