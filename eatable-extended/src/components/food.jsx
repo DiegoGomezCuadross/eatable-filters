@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import foodImage from "../images/food.svg";
+
 const ContainerCard = styled.div`
   width: 156px;
   height: 250px;
@@ -41,7 +42,7 @@ const Image = styled.img`
   flex-shrink: 0;
   margin: 0 13px 13px;
   border-radius: 130px;
-  background: url(../images/food-2.png), lightgray 50% / cover no-repeat;
+  filter: drop-shadow(0px 20px 20px rgba(0, 0, 0, 0.2));
 `;
 function Food() {
   return (

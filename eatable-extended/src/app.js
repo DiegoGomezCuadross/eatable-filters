@@ -1,9 +1,6 @@
 import styled from "@emotion/styled";
-import Food from "./components/food";
-import Footer from "./components/footer";
-import Price from "./components/price";
-import NavFood from "./components/navFood";
-import Search from "./components/search";
+import HomeFoodPage from "./pages/homeFoodPage";
+import FoodDetailPage from "./pages/foodDetailPage";
 
 const Container = styled.div`
   max-width: 414px;
@@ -25,23 +22,7 @@ const ContainerCard = styled.div`
   overflow: auto;
 `;
 function App() {
-  return (
-    <Container>
-      <Search />
-      <NavFood />
-      <Price />
-      <ContainerCard>
-        <Food />
-        <Food />
-        <Food />
-        <Food />
-        <Food />
-        <Food />
-        <Food />
-      </ContainerCard>
-      <Footer />
-    </Container>
-  );
+  return FoodDetailPage();
 }
 
 export default App;
