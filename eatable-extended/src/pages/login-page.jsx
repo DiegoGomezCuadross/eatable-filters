@@ -1,11 +1,12 @@
 import styled from "@emotion/styled";
-
+import { useState } from "react";
 import { colors } from "../styles/colors";
 import { typography } from "../styles/typography";
 import EatableLogo from "../images/logo.png";
 import TypeNav from "../components/type-nav";
 import Input from "../components/input";
 import Button from "../components/button";
+import { useAuth } from "../context/authContext";
 
 const Container = styled.div`
   background-color: #f6f6f9;
@@ -54,7 +55,28 @@ const InputWrapper = styled.div`
     gap: 20px;
 `;
 
-function Login() {
+function LoginForm() {
+  const { login } = useAuth();
+
+  //   const [formData, setFormData] = useState({
+  //     email: "crhis@mail.com",
+  //     password: "123123",
+  //   });
+
+  //   const { email, password } = formData;
+
+  //   function handleChange(event) {
+  //     const { name, value } = event.target;
+  //     // toast("adsasd")
+  //     setFormData({ ...formData, [name]: value });
+  //   }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    login();
+    // toast.success("Successfully loged in!")
+  }
+
   return (
     <Container>
       <Header>
@@ -66,17 +88,23 @@ function Login() {
         </div>
       </Header>
 
-      <Form>
+      <Form onsubmit={handleSubmit}>
         <InputWrapper>
           <Input
+            id="email"
+            name="email"
             label={"Email adress"}
             type="email"
             placeholder="my_mail@mail.com"
+            // onChange={handleChange}
           ></Input>
           <Input
+            id="password"
+            name="password"
             label={"Password"}
             type="password"
             placeholder="******"
+            // onChange={handleChange}
           ></Input>
         </InputWrapper>
         <Button rounded>Login</Button>
@@ -84,4 +112,4 @@ function Login() {
     </Container>
   );
 }
-export default Login;
+export default LoginForm;

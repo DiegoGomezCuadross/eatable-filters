@@ -4,6 +4,7 @@ import ReactDOM from "react-dom/client";
 import App from "./app";
 import { Global } from "@emotion/react";
 import { global, reset } from "./styles/global";
+import { AuthProvider } from "./context/authContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -11,7 +12,9 @@ root.render(
     <Global styles={reset} />
     <Global styles={global} />
     <BrowserRouter>
-      <App />
+      <AuthProvider>
+        <App />
+      </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
