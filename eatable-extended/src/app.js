@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
 import Food from "./components/food";
+import Login from "./pages/login-page";
+import UnauthenticatedApp from "./UnauthenticatedApp";
 
 const Container = styled.div`
   max-width: 414px;
@@ -11,8 +13,7 @@ const Container = styled.div`
 function App() {
   return (
     <Container>
-      <h1>Team 2</h1>
-      <Food />
+      <UnauthenticatedApp />
     </Container>
   );
 }
