@@ -21,8 +21,6 @@ const ContainerCard = styled.div`
   max-height: 535px;
   overflow: auto;
 `;
-function App() {
-  return FoodDetailPage();
-}
+function App() {}
 
 export default App;
