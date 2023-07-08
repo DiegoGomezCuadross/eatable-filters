@@ -8,8 +8,6 @@ const Container = styled.div`
   max-height: 896px;
   margin-left: auto;
   margin-right: auto;
-
-  padding: 1rem;
   background-color: #f6f6f9;
 `;
 

@@ -21,6 +21,7 @@ const NameCategory = styled.a`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  color: #9a9a9d;
 
   &:hover,
   active,

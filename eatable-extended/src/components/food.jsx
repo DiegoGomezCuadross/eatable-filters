@@ -3,7 +3,7 @@ import foodImage from "../images/food.svg";
 
 const ContainerCard = styled.div`
   width: 156px;
-  height: 250px;
+  height: 212px;
   flex-shrink: 0;
   border-radius: 30px;
   background: #fff;
@@ -19,40 +19,47 @@ const ContainerText = styled.div`
 `;
 
 const ContainerTitle = styled.div`
-description (FoodCard)
-display: flex;
-width: 130px;
-flex-direction: column;
-justify-content: center;
-color: var(--black, #333);
-text-align: center;
-font-size: 22px;
-font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--black, #333);
+  text-align: center;
+  position: relative;
+  font-size: 22px;
+  font-weight: 600;
+  top: -46px;
 `;
 const ContainerPrice = styled.div`
   color: var(--orange, #fa4a0c);
   text-align: center;
   font-size: 22px;
   font-weight: 600;
+  position: relative;
+  top: -56px;
 `;
 
 const Image = styled.img`
   width: 130px;
   height: 130px;
   flex-shrink: 0;
+  position: relative;
+  top: -40px;
+  object-fit: cover;
   margin: 0 13px 13px;
   border-radius: 130px;
   filter: drop-shadow(0px 20px 20px rgba(0, 0, 0, 0.2));
 `;
 function Food() {
   return (
-    <ContainerCard>
-      <Image src={foodImage} alt="Food image" />
-      <ContainerText>
-        <ContainerTitle>Veggie tomato mix</ContainerTitle>
-        <ContainerPrice>$15.45</ContainerPrice>
-      </ContainerText>
-    </ContainerCard>
+    <div style={{ height: "250px" }}>
+      <ContainerCard>
+        <Image src={foodImage} alt="Food image" />
+        <ContainerText>
+          <ContainerTitle>Veggie tomato mix</ContainerTitle>
+          <ContainerPrice>$15.45</ContainerPrice>
+        </ContainerText>
+      </ContainerCard>
+    </div>
   );
 }
 export default Food;

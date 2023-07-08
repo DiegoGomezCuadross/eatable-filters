@@ -16,13 +16,13 @@ const Container = styled.div`
 `;
 const ContainerCard = styled.div`
   display: grid;
-  grid: ;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   margin-right: 30px;
   margin-left: 30px;
   max-height: 535px;
   overflow: auto;
+  padding-top: 40px;
 `;
 function HomeFoodPage() {
   return (
@@ -31,6 +31,11 @@ function HomeFoodPage() {
       <NavFood />
       <Price />
       <ContainerCard>
+        <Food />
+        <Food />
+        <Food />
+        <Food />
+        <Food />
         <Food />
         <Food />
         <Food />

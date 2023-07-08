@@ -10,7 +10,6 @@ const ContainerFooter = styled.footer`
   align-items: center;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  background: #d1d5db;
 `;
 
 const ContainerIcon = styled.div`

@@ -8,7 +8,6 @@ const NavIcon = styled(NavLink)`
   border: none;
   cursor: pointer;
   padding: 0.625rem;
-  background-color: #f5f5f8;
   color: ${colors.stone[400]};
   display: flex;
   justify-content: center;
