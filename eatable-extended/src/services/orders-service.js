@@ -1,5 +1,12 @@
-import apiFetch from "../api-fetch";
+import apiFetch from "./api-fetch";
 
+export async function getOrders(){
+    const listOrders = await apiFetch("/orders")  
+    
+    console.log( listOrders);
+        
+    return listOrders;
+}
 
 export async function createOrder(body = {
     "delivery_address": "Jamaica",
