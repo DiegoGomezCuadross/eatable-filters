@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
-import HomeFoodPage from "./pages/homeFoodPage";
-import FoodDetailPage from "./pages/foodDetailPage";
+import Food from "./components/food";
+import Login from "./pages/login-page";
+import UnauthenticatedApp from "./UnauthenticatedApp";
 
 const Container = styled.div`
   max-width: 414px;
@@ -11,16 +12,13 @@ const Container = styled.div`
   background: #d1d5db;
   border-radius: 20px;
 `;
-const ContainerCard = styled.div`
-  display: grid;
-  grid: ;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  margin-right: 30px;
-  margin-left: 30px;
-  max-height: 535px;
-  overflow: auto;
-`;
-function App() {}
+
+function App() {
+  return (
+    <Container>
+      <UnauthenticatedApp />
+    </Container>
+  );
+}
 
 export default App;
