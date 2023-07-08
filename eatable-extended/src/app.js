@@ -2,21 +2,23 @@ import styled from "@emotion/styled";
 import Food from "./components/food";
 import Login from "./pages/login-page";
 import UnauthenticatedApp from "./UnauthenticatedApp";
+import Profile from "./pages/profile-page";
 
 const Container = styled.div`
   max-width: 414px;
   max-height: 896px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 45px;
-  background: #d1d5db;
-  border-radius: 20px;
+
+  padding: 1rem;
+  background-color: #f6f6f9;
+
 `;
 
 function App() {
   return (
     <Container>
-      <UnauthenticatedApp />
+      <Profile />
     </Container>
   );
 }
