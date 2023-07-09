@@ -59,11 +59,11 @@ function LoginForm() {
   const { login } = useAuth();
 
   const [formData, setFormData] = useState({
-    email: "",
-    password: "",
+    email: "testino@mail.com",
+    password: "letmein",
   });
 
-  //   const { email, password } = formData;
+  const { email, password } = formData;
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -73,7 +73,7 @@ function LoginForm() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    login();
+    login(formData);
     // toast.success("Successfully loged in!")
   }
 
@@ -95,6 +95,7 @@ function LoginForm() {
             name="email"
             label={"Email adress"}
             type="email"
+            value={email}
             placeholder="my_mail@mail.com"
             onChange={handleChange}
           ></Input>
@@ -103,6 +104,7 @@ function LoginForm() {
             name="password"
             label={"Password"}
             type="password"
+            value={password}
             placeholder="******"
             onChange={handleChange}
           ></Input>

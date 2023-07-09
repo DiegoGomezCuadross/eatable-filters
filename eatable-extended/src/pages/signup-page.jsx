@@ -63,7 +63,7 @@ function SignUp() {
     password: "",
   });
 
-  //   const { email, password } = formData;
+  // const { email, password } = formData;
 
   function handleChange(event) {
     const { name, value } = event.target;
