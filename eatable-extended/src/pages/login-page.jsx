@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-// import { useState } from "react";
+import { useState } from "react";
 import { colors } from "../styles/colors";
 // import { typography } from "../styles/typography";
 import EatableLogo from "../images/logo.png";
@@ -58,22 +58,21 @@ const InputWrapper = styled.div`
 function LoginForm() {
   const { login } = useAuth();
 
-  //   const [formData, setFormData] = useState({
-  //     email: "testino@mail.com",
-  //     password: "letmein",
-  //   });
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
 
   //   const { email, password } = formData;
 
-  //   function handleChange(event) {
-  //     const { name, value } = event.target;
-  //     // toast("adsasd")
-  //     setFormData({ ...formData, [name]: value });
-  //   }
+  function handleChange(event) {
+    const { name, value } = event.target;
+    // toast("adsasd")
+    setFormData({ ...formData, [name]: value });
+  }
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(event);
     login();
     // toast.success("Successfully loged in!")
   }
@@ -97,7 +96,7 @@ function LoginForm() {
             label={"Email adress"}
             type="email"
             placeholder="my_mail@mail.com"
-            // onChange={handleChange}
+            onChange={handleChange}
           ></Input>
           <Input
             id="password"
@@ -105,7 +104,7 @@ function LoginForm() {
             label={"Password"}
             type="password"
             placeholder="******"
-            // onChange={handleChange}
+            onChange={handleChange}
           ></Input>
         </InputWrapper>
         <Button rounded>Login</Button>

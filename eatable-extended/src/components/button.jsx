@@ -61,7 +61,7 @@ const StyledButton = styled.button`
   background-color: ${colors.orange[500]};
   color: ${colors.white};
   border: none;
-  ${typography.text.md}
+  ${typography.text.lg}
   line-height: 1em;
   cursor: pointer;
   height: 70px;

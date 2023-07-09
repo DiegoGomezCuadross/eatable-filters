@@ -1,13 +1,8 @@
 import apiFetch from "./api-fetch";
 import { tokenKey } from "../config";
 
-export async function createUser(
-  body = {
-    email: "tester10@mail.com",
-    password: "letmein",
-  }
-) {
-  const { token, ...user } = await apiFetch("/users", { body });
+export async function createUser(credentials) {
+  const { token, ...user } = await apiFetch("/users", { body: credentials });
 
   sessionStorage.setItem(tokenKey, token);
 
