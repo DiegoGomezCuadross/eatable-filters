@@ -27,24 +27,44 @@ const ContainerCard = styled.div`
   padding-top: 40px;
 `;
 function HomeFoodPage() {
-
+  // const [filters, setFilters] = useState({
+  //   category: "italian",
+  //   minprice: 0,
+  //   maxprice: 1000000000,
+  // });
+  // const italian = [];
   const [products, setProducts] = useState(null);
 
+  function FilterFoods(category) {
+    let foods = products?.filter((product) => product.category === category);
+
+    console.log(foods);
+  }
   useEffect(() => {
-    getProducts().then(setProducts).catch(console.log)
-    
-  },[])
-  console.log(products)
-  
+    getProducts().then(setProducts).catch(console.log);
+  }, []);
+  console.log(products);
+
+  // function toggleFilter(newValue, prop) {
+  //   let newValues;
+
+  //   if (filters[prop].includes(newValue)) {
+  //     newValues = filters[prop].filter((value) => value !== newValue);
+  //   } else {
+  //     newValues = [...filters[prop], newValue];
+  //   }
+  //   newValues = { ...filters, prop };
+  //   setFilters(newValues);
+  // }
+
   return (
     <Container>
-      
       <Search />
-      <NavFood />
+      <NavFood {...products} />
       <Price />
       <ContainerCard>
-        {products?.map(product => {
-          return <Food {...product}></Food>
+        {products?.map((product) => {
+          return <Food key={product.id} {...product}></Food>;
         })}
       </ContainerCard>
       <Footer />

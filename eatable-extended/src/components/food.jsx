@@ -49,14 +49,14 @@ const Image = styled.img`
   border-radius: 130px;
   filter: drop-shadow(0px 20px 20px rgba(0, 0, 0, 0.2));
 `;
-function Food(product) {
+function Food(food) {
   return (
     <div style={{ height: "250px" }}>
       <ContainerCard>
-        <Image src={product.picture_url} alt="Food image" />
+        <Image src={food.picture_url} alt="Food image" />
         <ContainerText>
-          <ContainerTitle>{product.name}</ContainerTitle>
-          <ContainerPrice>${product.price}</ContainerPrice>
+          <ContainerTitle>{food.name}</ContainerTitle>
+          <ContainerPrice>{food.price}</ContainerPrice>
         </ContainerText>
       </ContainerCard>
     </div>

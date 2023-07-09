@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { useState } from "react";
+import { login } from "../services/sessions-service";
 
 const ConteinerHeaderFood = styled.header`
   padding: 10px 0;
@@ -7,13 +8,15 @@ const ConteinerHeaderFood = styled.header`
 const ConteinerNav = styled.nav`
   margin: 0;
   padding: 0;
-  display: flex;
   justify-content: space-around;
 `;
 const ConteinerLi = styled.li`
   margin-right: 10px;
   list-style: none;
   text-decoration: none;
+  display: flex;
+  flex-wrap: wrap;
+  width: 352px;
 `;
 const NameCategory = styled.a`
   text-decoration: none;
@@ -33,30 +36,39 @@ const NameCategory = styled.a`
   }
 `;
 
-
-
-function NavFood(data) {
-
-  const [filter,setFilter] = useState({
-    category:[],
-    price:[],
-  })
-  
-
-  function togleFilter(category){
-    
-
+function NavFood(products) {
+  const [filter, setFilter] = useState({
+    category: [],
+    price: [],
+  });
+  // console.log(Object.values(products));
+  // for (let i = 0; i <= Object.values(products).length(); i++) {
+  //   console.log(Object.values(products)[i].category, "hola");
+  // }
+  function FilterCategories() {
+    let categories = [];
+    Object.values(products)?.map((product) => {
+      let category = Object.values(product.category);
+      categories.push(category.join("").toLowerCase());
+    });
+    return categories;
   }
-  
+  const data = FilterCategories();
+  const dataCleaner = [...new Set(data)];
+  console.log(dataCleaner);
+
   return (
     <ConteinerHeaderFood>
       <ConteinerNav>
         <ul className={ConteinerNav}>
           <ConteinerLi>
-            <NameCategory href="#" onClick={()=>(console.log("Italian"))}>Italian</NameCategory>
-            <NameCategory href="#" onClick={()=>(console.log("Mexican"))}>Mexican</NameCategory>
-            <NameCategory href="#" onClick={()=>(console.log("Snacks"))}>Snacks</NameCategory>
-            <NameCategory href="#"onClick={()=>(console.log("Peruvian"))}>Peruvian</NameCategory>
+            {dataCleaner?.map((data) => {
+              return (
+                <NameCategory key={data} href="#" onClick={console.log(data)}>
+                  {data}
+                </NameCategory>
+              );
+            })}
           </ConteinerLi>
         </ul>
       </ConteinerNav>

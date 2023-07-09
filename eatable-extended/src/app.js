@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import HomeFoodPage from "./pages/homeFoodPage";
 import UnauthenticatedApp from "./UnauthenticatedApp";
-import AuthenticatedApp from "./AuthenticatedApp";
+// import AuthenticatedApp from "./AuthenticatedApp";
 import { useAuth } from "./context/authContext";
 
 const Container = styled.div`
