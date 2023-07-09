@@ -14,7 +14,7 @@ export async function createUser(credentials) {
 export async function getUser() {
   const { token, ...user } = await apiFetch("/profile");
 
-  console.log(user);
+  // console.log(user);
   return user;
 }
 
