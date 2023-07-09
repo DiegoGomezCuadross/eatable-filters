@@ -1,73 +1,49 @@
 import styled from "@emotion/styled";
-import { NavLink } from "react-router-dom";
-import { BiSolidHome } from "react-icons/bi";
-import { FaUserAlt } from "react-icons/fa";
-import { colors } from "../styles/colors";
+import { LiaHomeSolid } from "react-icons/lia";
+import { CiUser } from "react-icons/ci";
 
-const NavIcon = styled(NavLink)`
-  border: none;
-  cursor: pointer;
-  padding: 0.625rem;
-  color: ${colors.stone[400]};
+const ContainerFooter = styled.footer`
+  bottom: 0;
+  background: white;
+  height: 80px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 59px;
-  height: 59px;
-  &:active {
-    color: ${colors.orange[500]};
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+`;
+
+const ContainerIcon = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-left: 120px;
+  margin-right: 120px;
+`;
+const Icon = styled.div`
+  width: 30px;
+  height: 30px;
+  size: 30;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+
+  &:hover {
+    background: rgba(215, 100, 0, 0.4);
+    box-shadow: 0px 0px 5px 5px rgba(215, 56, 0, 0.4);
+    border-radius: 50%;
   }
 `;
-
-const FooterDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-`;
-
 function Footer() {
   return (
-    <FooterDiv>
-      <NavIcon
-        to={"search"}
-        style={({ isActive }) => {
-          if (!isActive) return;
-          return {
-            color: colors.orange[500],
-            "&:visited": {
-              color: colors.orange[500],
-            },
-          };
-        }}
-      >
-        <BiSolidHome
-          style={{
-            width: "24px",
-            height: "24px",
-          }}
-        />
-      </NavIcon>
-      <NavIcon
-        to={"profile"}
-        style={({ isActive }) => {
-          if (!isActive) return;
-          return {
-            color: colors.orange[500],
-            "&:visited": {
-              color: colors.orange[500],
-            },
-          };
-        }}
-      >
-        <FaUserAlt
-          style={{
-            width: "24px",
-            height: "24px",
-          }}
-        />
-      </NavIcon>
-    </FooterDiv>
+    <ContainerFooter>
+      <ContainerIcon>
+        <Icon>
+          <LiaHomeSolid style={{ width: "30px", height: "30px" }} />
+        </Icon>
+        <Icon>
+          <CiUser style={{ width: "30px", height: "30px" }} />
+        </Icon>
+      </ContainerIcon>
+    </ContainerFooter>
   );
 }
 
