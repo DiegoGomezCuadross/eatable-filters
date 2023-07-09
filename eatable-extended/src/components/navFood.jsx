@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { useState } from "react";
 
 const ConteinerHeaderFood = styled.header`
   padding: 10px 0;
@@ -32,16 +33,30 @@ const NameCategory = styled.a`
   }
 `;
 
-function NavFood() {
+
+
+function NavFood(data) {
+
+  const [filter,setFilter] = useState({
+    category:[],
+    price:[],
+  })
+  
+
+  function togleFilter(category){
+    
+
+  }
+  
   return (
     <ConteinerHeaderFood>
       <ConteinerNav>
         <ul className={ConteinerNav}>
           <ConteinerLi>
-            <NameCategory href="#">Italian</NameCategory>
-            <NameCategory href="#">Mexican</NameCategory>
-            <NameCategory href="#">Snacks</NameCategory>
-            <NameCategory href="#">Peruvian</NameCategory>
+            <NameCategory href="#" onClick={()=>(console.log("Italian"))}>Italian</NameCategory>
+            <NameCategory href="#" onClick={()=>(console.log("Mexican"))}>Mexican</NameCategory>
+            <NameCategory href="#" onClick={()=>(console.log("Snacks"))}>Snacks</NameCategory>
+            <NameCategory href="#"onClick={()=>(console.log("Peruvian"))}>Peruvian</NameCategory>
           </ConteinerLi>
         </ul>
       </ConteinerNav>

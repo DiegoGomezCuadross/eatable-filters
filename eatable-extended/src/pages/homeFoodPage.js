@@ -4,6 +4,8 @@ import NavFood from "../components/navFood";
 import Price from "../components/price";
 import Food from "../components/food";
 import Footer from "../components/footer";
+import { getProducts } from "../services/products-service";
+import { useEffect, useState } from "react";
 
 const Container = styled.div`
   max-width: 414px;
@@ -25,24 +27,25 @@ const ContainerCard = styled.div`
   padding-top: 40px;
 `;
 function HomeFoodPage() {
+
+  const [products, setProducts] = useState(null);
+
+  useEffect(() => {
+    getProducts().then(setProducts).catch(console.log)
+    
+  },[])
+  console.log(products)
+  
   return (
     <Container>
+      
       <Search />
       <NavFood />
       <Price />
       <ContainerCard>
-        <Food />
-        <Food />
-        <Food />
-        <Food />
-        <Food />
-        <Food />
-        <Food />
-        <Food />
-        <Food />
-        <Food />
-        <Food />
-        <Food />
+        {products?.map(product => {
+          return <Food {...product}></Food>
+        })}
       </ContainerCard>
       <Footer />
     </Container>
