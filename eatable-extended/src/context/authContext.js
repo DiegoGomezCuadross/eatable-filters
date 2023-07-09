@@ -42,7 +42,6 @@ function AuthProvider(props) {
   useEffect(() => {
     getUser()
       .then((user) => {
-        console.log(user);
         setUser(user);
       })
       .catch((error) => console.log(error));
