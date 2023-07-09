@@ -73,7 +73,7 @@ function LoginForm() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    login();
+    login(formData);
     // toast.success("Successfully loged in!")
   }
 
