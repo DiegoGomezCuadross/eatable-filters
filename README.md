@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+![eatable](https://res.cloudinary.com/dwdgpw20b/image/upload/v1672780246/codeable/iPhone_11_Pro_Max_-_19_nydcmo.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Resources
 
-## Available Scripts
+- Design: **[here](https://www.figma.com/file/2zBMKn5AX6hYydkRKnyZIo/Eatable-Filters?node-id=0-1&t=s7o4ypgZdOGap8Lb-0)**
+- API endpoint: https://codeable-eatable-api.herokuapp.com
+- Backend: **[here](https://github.com/codeableorg/eatable-api)** (includes insomnia json file)
 
-In the project directory, you can run:
+## Eatable - Food for Everyone
 
-### `npm start`
+Eats Inc. is developing a new idea in the food-tech industry: "Eatable". They have hired your team to build an MVP for the web app. The stakes are high and the time is short but you and your team are confident in your abilities to finish on time.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Requirements
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The MVP should follow these technical requirements:
 
-### `npm test`
+- It should be built with React reusable components.
+- It should use Context and Reducers to manage the global app state.
+- It should include Unit tests for, at least a correct render of each component.
+- It should connect to an external API to fetch and persist data.
+- It should use CSS in JS for the styles using Emotion.
+- It should handle token-based authentication. All pages except Login and Sign-Up should be protected.
+- It should be able to handle page refreshes without losing the current state of the app. (LocalStorage or SessionStorage are both valid).
+- It should handle errors showing useful messages to the user.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Main user stories
 
-### `npm run build`
+As a user I want to...
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Create an account with only my email and password and then complete extra info if I wish.
+- Login to the app with my email and password
+- Update my profile: name, phone, and address.
+- See a list of products by category showing the picture, name, and price of each product.
+- See the details of one product including the picture, price, description, and a button to Go Back to the previous view.
+- Search a product by name.
+- Filter the products by price.
+- See "empty-state" messages when my search does not have any coincidences.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+👩🏻‍💻 Happy coding! 👨‍💻
