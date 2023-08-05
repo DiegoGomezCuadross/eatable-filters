@@ -1,9 +1,8 @@
 import styled from "@emotion/styled";
-import foodImage from "../images/food.svg";
 
 const ContainerCard = styled.div`
   width: 156px;
-  height: 212px;
+  height: 220px;
   flex-shrink: 0;
   border-radius: 30px;
   background: #fff;
@@ -56,7 +55,7 @@ function Food(food) {
         <Image src={food.picture_url} alt="Food image" />
         <ContainerText>
           <ContainerTitle>{food.name}</ContainerTitle>
-          <ContainerPrice>{food.price}</ContainerPrice>
+          <ContainerPrice>{(food.price / 100).toFixed(2)}</ContainerPrice>
         </ContainerText>
       </ContainerCard>
     </div>

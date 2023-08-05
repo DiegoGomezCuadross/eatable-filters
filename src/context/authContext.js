@@ -39,13 +39,13 @@ function AuthProvider(props) {
     updateProfile,
   };
 
-  useEffect(() => {
-    getUser()
-      .then((user) => {
-        setUser(user);
-      })
-      .catch((error) => console.log(error));
-  }, []);
+  // useEffect(() => {
+  //   getUser()
+  //     .then((user) => {
+  //       setUser(user);
+  //     })
+  //     .catch((error) => console.log(error));
+  // }, []);
 
   return <AuthContext.Provider value={value} {...props} />;
 }
